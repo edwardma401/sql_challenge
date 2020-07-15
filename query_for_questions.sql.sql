@@ -12,9 +12,9 @@ CREATE VIEW task_1 AS
      INNER JOIN salaries ON employees.emp_no = salaries.emp_no
 
 CREATE VIEW task_2 AS
- SELECT employees.first_name,
-    employees.last_name,
-    employees.hire_date
+ SELECT irst_name,
+    last_name,
+    hire_date
    FROM employees
   WHERE employees.hire_date = '%1986'
 
@@ -52,9 +52,9 @@ ALTER TABLE public.task_4 OWNER TO postgres;
 --
 
 CREATE VIEW task_5 AS
- SELECT employees.first_name,
-    employees.last_name,
-    employees.sex
+ SELECT first_name,
+    last_name,
+    sex
    FROM employees
   WHERE employees.first_name = 'Hercules' AND employees.last_name LIKE 'B%'
 
@@ -91,7 +91,7 @@ CREATE VIEW task_7 AS
 
 CREATE VIEW task_8 AS
  SELECT last_name,
-    count(first_name) AS last_name_counts
+    COUNT(first_name) AS last_name_counts
    FROM employees
   GROUP BY last_name
   ORDER BY last_name_counts DESC
